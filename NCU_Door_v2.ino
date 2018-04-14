@@ -18,8 +18,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-#define LCDI2CAddr 0x27
+//#define LCDI2CAddr 0x27
+#define LCDI2CAddr 0x0f
 #define KBI2CAddr 0x38
 
 LiquidCrystal_I2C lcd (LCDI2CAddr, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);
@@ -132,6 +132,7 @@ void setup() {
   //Console.begin();
   //while (!Console);
   //Console.println("\nInit!!!");
+  Serial.begin(9600);
   kpd.begin ( makeKeymap(keys) );
   lcd.begin (16, 2);
   lcd.backlight ();
@@ -145,6 +146,7 @@ void setup() {
   //lcd.backlight ();
   pinMode(6, OUTPUT);
   pinMode(4, OUTPUT);
+  pinMode(3, OUTPUT);
   //digitalWrite(5, HIGH);
 }
 
@@ -168,7 +170,9 @@ void Reset(){
   setup();
 }
 
+
 void loop() {
+
   char key;
   key = kpd.getKey();
   if(key){
