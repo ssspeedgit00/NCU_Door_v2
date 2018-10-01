@@ -150,21 +150,6 @@ void setup() {
   //digitalWrite(5, HIGH);
 }
 
-void pwn(){
-  if( wait_key() == '3' )
-    if( wait_key() == '9' )
-      if( wait_key() == '7' )
-        if( wait_key() == '7' ){
-          //line( "Black pwn :(" );
-          delay( 100 );
-          line( "Good job :) " );
-          delay( 100 );
-          triggerDoor();
-          //delay( 300 );
-          delay( 770 );
-          Title();
-        }
-}
 
 void Reset(){
   setup();
@@ -188,9 +173,6 @@ void loop() {
       case 'F':
         Title();
         http();
-        break;
-      case 'C':
-        pwn();
         break;
         
     }
